@@ -5,9 +5,10 @@
   "main": "src/App.js",
   "scripts": {
     "test": "jest --coverage",
-    "dev": "nodemon  --ignore './client/' --exec babel-node server/index.js",
-    "start": "node build/index.js",
-    "build": "rimraf dist && mkdir dist && webpack --mode=production && babel server --copy-files --out-dir build"
+    "dev": "cross-env NODE_ENV=deelopment && nodemon  --ignore './client/' --exec babel-node server/index.js",
+    "start": "cross-env NODE_ENV=production node build/index.js",
+    "build": "cross-env NODE_ENV=production && npm run build:client && babel server --copy-files --out-dir build",
+    "build:client": "webpack --mode=production"
   },
   "repository": {
     "type": "git",

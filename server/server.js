@@ -30,8 +30,10 @@ if (process.env.NODE_ENV === 'development') {
 
 routes(app);
 
+app.use(express.static(path.resolve(__dirname, './public')));
+
 const port = process.env.PORT || 2000;
 
-app.use(express.static(path.resolve(__dirname, '../dist')));
+
 
 export default app;
