@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(7, 1, 27);
+  margin: 0 !important;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.main h1 {
+  color: white;
+  font-family: monospace;
+  font-size: 4em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+select:focus, input:focus, button:focus {
+  outline: none;
+}

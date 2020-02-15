@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(7, 1, 27);
+  margin: 0 !important;
+  padding: 0;
+}
+
+select:focus, input:focus, button:focus {
+  outline: none;
+}

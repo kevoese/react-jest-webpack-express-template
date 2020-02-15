@@ -1,0 +1,20 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.main h1 {
+  color: white;
+  font-family: monospace;
+  font-size: 4em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ button:focus {
+  outline: none;
+}

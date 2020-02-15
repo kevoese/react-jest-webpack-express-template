@@ -16,7 +16,7 @@ module.exports = (env, arg) => {
 
   return {
     mode: isDevelopment ? 'development' : 'production',
-    entry: ['webpack-hot-middleware/client?reload=true', './client/App.js'],
+    entry: ['webpack-hot-middleware/client?reload=true', './client/App.jsx'],
     devtool: isDevelopment && 'inline-source-map',
     output: {
       path: path.join(__dirname, 'build/public'),
@@ -36,7 +36,14 @@ module.exports = (env, arg) => {
           },
         },
         {
-          test: /\.s(a|c)ss$/,
+          test: /\.css$/,
+          use: [
+            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+          ],
+        },
+        {
+          test: /\.s(c|a)ss$/,
           use: [
             isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
@@ -46,6 +53,7 @@ module.exports = (env, arg) => {
                 sourceMap: isDevelopment,
               },
             },
+            'postcss-loader',
           ],
         },
         {
